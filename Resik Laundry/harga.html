@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harga-Resik Laundry</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+        .navbar-brand,
+        .nav-link {
+            color: white;
+        }
+
+        .gmbr {
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s;
+        }
+
+        .g {
+            height: 40vh;
+            object-fit: cover;
+        }
+
+        .b {
+            height: 60px;
+            border-radius: 50%;
+            margin-left: 30%;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .kontak-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            background-color: gray;
+            color: white;
+            padding: 15px;
+            margin-top: 50px;
+            font-size: 15px;
+            gap: 30px;
+        }
+
+        .ror {
+            min-width: 200px;
+            margin-top: 0 !important;
+            align-self: flex-start;
+        }
+
+        #loader {
+            position: fixed;
+            z-index: 9999;
+            background: white;
+            width: 100vw;
+            height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 600px) {
+            .g {
+                height: 25vh;
+            }
+
+            .gmbr {
+                height: 120px;
+            }
+        }
+
+        .navbar-nav {
+            margin-right: 40%;
+        }
+
+        .cok {
+            width: 5%;
+            text-align: center;
+            margin-right: 5%;
+            padding: 1%;
+            border-radius: 10px;
+
+        }
+
+        .cok a {
+            text-decoration: none;
+        }
+
+        .header {
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+        }
+
+        .ruz {
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body onload="hideLoader()">
+
+    <div id="loader">
+        <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <div class="header">
+        <div class="ruz">
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-tiktok"></i>
+            <i class="bi bi-whatsapp"></i>
+            <i class="bi bi-facebook"></i>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img class="b" src="lk.jpg" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#horeq">Harga</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tentangKami.html">Tentang Kami</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pesan.html">Pesan</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container my-5">
+        <div class="row g-4 justify-content-center">
+            <div class="col-12 col-sm-6 col-lg-3 d-flex">
+                <div class="card flex-fill">
+                    <img src="orang.png" class="card-img-top gmbr" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Cuci Kiloan</h5>
+                        <p class="card-text">Cuci kiloan adalah layanan laundry di mana pelanggan membayar jasa
+                            pencucian berdasarkan berat pakaian (per kilogram), bukan per potong. Layanan ini sangat
+                            cocok bagi individu, keluarga, mahasiswa, hingga pekerja kantoran yang ingin mendapatkan
+                            pakaian bersih dan rapi tanpa repot.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3 d-flex">
+                <div class="card flex-fill">
+                    <img src="baju.png" class="card-img-top gmbr" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Cuci Satuan</h5>
+                        <p class="card-text">Cuci satuan adalah layanan laundry di mana pakaian dicuci dan dirawat
+                            secara individu atau berdasarkan jenisnya, bukan berdasarkan berat (kilogram). Layanan ini
+                            biasanya digunakan untuk pakaian tertentu yang memerlukan perawatan khusus, seperti jas,
+                            kebaya, bed cover, jaket, selimut, sprei, pakaian pesta, dan lainnya.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3 d-flex">
+                <div class="card flex-fill">
+                    <img src="gorden.jpg" class="card-img-top gmbr" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Gorden</h5>
+                        <p class="card-text">Gorden bukan hanya penutup jendela, tapi juga elemen penting dalam
+                            mempercantik interior rumah, kantor, maupun hotel. Namun karena fungsinya yang langsung
+                            bersentuhan dengan debu, asap, dan udara luar, gorden mudah kotor dan menyimpan bakteri.
+                            Untuk itulah layanan cuci gorden hadir — solusi praktis untuk menjaga kebersihan dan
+                            tampilan gorden Anda tetap maksimal.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3 d-flex">
+                <div class="card flex-fill">
+                    <img src="images.jpg" class="card-img-top gmbr" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Cuci Badcover</h5>
+                        <p class="card-text">Bed cover atau penutup kasur adalah salah satu perlengkapan tidur yang
+                            memberikan kenyamanan sekaligus menambah estetika kamar. Namun karena penggunaannya setiap
+                            hari, bed cover mudah kotor, menyimpan keringat, debu, tungau, bahkan bakteri. Oleh karena
+                            itu, cuci bed cover secara rutin sangat penting untuk menjaga kebersihan dan kesehatan tidur
+                            Anda.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3 d-flex">
+                <div class="card flex-fill">
+                    <img src="tas.png" class="card-img-top gmbr" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Tas</h5>
+                        <p class="card-text">Layanan jasa yang menawarkan layanan mencuci dan merawat tas, baik itu tas
+                            ransel, tas tangan, tas kanvas, dan lain sebagainya. Treatment dilakukan oleh team kami yang
+                            terampil dan berpengalaman dalam membersihkan dan merawat tas agar tetap terjaga kualitas
+                            dan fungsinya.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3 d-flex">
+                <div class="card flex-fill">
+                    <img src="sepatu.png" class="card-img-top gmbr" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Sepatu</h5>
+                        <p class="card-text">Layanan yang menawarkan jasa mencuci dan merawat sepatu dengan berbagai
+                            macam jenis dan bahan. Layanan jasa cuci sepatu biasanya dilakukan oleh team kami yang
+                            terampil dan berpengalaman dalam merawat sepatu agar tetap terjaga kualitas dan fungsinya.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3 d-flex">
+                <div class="card flex-fill">
+                    <img src="karpet.jpg" class="card-img-top gmbr" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Karpet</h5>
+                        <p class="card-text">Karpet adalah elemen penting dalam interior rumah, kantor, hingga tempat
+                            ibadah. Selain mempercantik ruangan, karpet juga berfungsi menambah kenyamanan. Namun,
+                            karena sering diinjak dan digunakan setiap hari, karpet sangat rentan menjadi sarang debu,
+                            kuman, tungau, hingga bau tak sedap. Untuk itu, layanan cuci karpet profesional
+                            sangat dibutuhkan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container my-5">
+        <h3>Daftar Harga</h3>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Layanan</th>
+                        <th>Harga/Kg</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Laundry Kiloan</td>
+                        <td>Rp7.000</td>
+                    </tr>
+                    <tr>
+                        <td>Laundry Satuan</td>
+                        <td>Rp10.000</td>
+                    </tr>
+                    <tr>
+                        <td>Gorden</td>
+                        <td>Rp15.000</td>
+                    </tr>
+                    <tr>
+                        <td>Badcover</td>
+                        <td>Rp25.000</td>
+                    </tr>
+                    <tr>
+                        <td>tas</td>
+                        <td>Rp50.000</td>
+                    </tr>
+                    <tr>
+                        <td>Sepatu</td>
+                        <td>Rp20.000</td>
+                    </tr>
+                    <tr>
+                        <td>Karpet</td>
+                        <td>Rp30.000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <section class="kontak-section">
+        <div>
+            <h2>Kontak Kami</h2>
+            <p>📞 0812-3456-7890</p>
+            <p>📍 Jl. Melati No. 123, Jakarta</p>
+            <p>📧 laundrykilat@gmail.com</p>
+        </div>
+        <div class="ror">
+            <h3>Keunggulan Kami :</h3>
+            <ul>
+                <li>Menggunakan detergen berkualitas dan ramah lingkungan</li>
+                <li>Proses cepat & tepat waktu</li>
+                <li>Dikerjakan oleh staf berpengalaman</li>
+                <li>Harga terjangkau</li>
+                <li>Wangi tahan lama</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 ResikLaundry.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+</body>
+<script>
+    function hideLoader() {
+    setTimeout(() => {
+        document.getElementById("loader").style.display = "none";
+    }, 1500);
+}
+</script>
+</html>
