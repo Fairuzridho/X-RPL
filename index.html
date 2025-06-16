@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landry Resik</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .navbar-brand,
+        .nav-link {
+            color: white;
+        }
+
+        .gmbr {
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s;
+        }
+
+        .g {
+            height: 60vh;
+        }
+
+        .b {
+            height: 60px;
+            border-radius: 50%;
+            margin-left: 30%;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .kontak-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            background-color: gray;
+            color: white;
+            padding: 15px;
+            margin-top: 50px;
+            font-size: 15px;
+            gap: 20px;
+        }
+
+        .ror-section {
+            min-width: 300px;
+            margin-top: 0 !important;
+            align-self: flex-start;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #loader {
+            position: fixed;
+            z-index: 9999;
+            background: white;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 600px) {
+            .g {
+                height: 25vh;
+            }
+
+            .gmbr {
+                height: 120px;
+            }
+        }
+
+        .navbar-nav {
+            margin-right: auto;
+        }
+
+        .cok {
+            width: 120px;
+            text-align: center;
+            margin-right: 5%;
+            padding: 8px 0;
+            border-radius: 10px;
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: background 0.2s;
+            cursor: pointer;
+        }
+
+        .cok:hover {
+            background-color: #0b5ed7;
+        }
+
+        .cok a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .header {
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: auto;
+            margin-left: 10px;
+        }
+
+        .ruz {
+            font-size: 30px;
+        }
+
+        .z {
+            margin-left: 7em;
+        }
+
+        .card-body1 {
+            padding: 10px;
+            border-radius: 15px;
+        }
+
+        .m {
+            position: absolute;
+            margin: 0;
+            z-index: 100;
+            margin-top: 10%;
+            color: white;
+        }
+
+        .j {
+            justify-content: center;
+            display: flex;
+        }
+
+        .y {
+            background-color: rgb(24, 24, 212);
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 40px;
+            padding: 40px 5vw;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .rer {
+            flex: 1 1 300px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 0;
+            float: none;
+            max-width: 400px;
+        }
+
+        .rer img {
+            max-height: 70vh;
+            width: auto;
+            max-width: 100%;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .x {
+            flex: 2 1 400px;
+            color: white;
+            gap: 20px;
+            font-size: 15px;
+            padding: 0 20px;
+        }
+
+        @media (max-width: 900px) {
+            .y {
+                flex-direction: column;
+                align-items: center;
+                gap: 24px;
+                padding: 24px 2vw;
+            }
+
+            .rer,
+            .x {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .rer img {
+                max-height: 40vh;
+            }
+
+            .x h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .y {
+                padding: 16px 0;
+            }
+
+            .rer img {
+                max-height: 30vh;
+                border-radius: 12px;
+            }
+
+            .x {
+                font-size: 14px;
+                padding: 0 8px;
+            }
+
+            .x h1 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+
+<body onload="hideLoader()">
+
+    <div id="loader">
+        <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <div class="header">
+        <div class="ruz">
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-tiktok"></i>
+            <i class="bi bi-whatsapp"></i>
+            <i class="bi bi-facebook"></i>
+        </div>
+        <button class="cok"><a href="login.html">Login</a></button>
+    </div>
+    <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img class="b" src="lk.jpg" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="harga.html">Harga</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tentangKami.html">Tentang Kami</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pesan.html">Pesan</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+            <div class="j">
+                <h1 class="m">Selamat datang Di Resik Laundry!!</h1>
+            </div>
+            <div class="carousel-item active">
+                <img src="room.jpg" class="d-block w-100 g" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="p.jpg" class="d-block w-100 g" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+    <div data-aos="fade-down-right">
+        <div class="z">
+            <h1>Mengapa Resik Laundry?</h1>
+        </div>
+        <div class="container my-5">
+            <div class="card mb-4">
+                <div class="row g-0 align-items-center">
+                    <div class="col-md-4">
+                        <img src="lk.jpg" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Resik Laundry: Solusi Pakaian Bersih,Wangi,dan Rapi Setiap Hari.</h5>
+                            <p class="card-text">Di tengah kesibukan dan gaya hidup yang serba cepat, kebutuhan akan
+                                layanan
+                                laundry yang praktis, cepat, dan berkualitas semakin meningkat. Resik Laundry hadir
+                                sebagai
+                                solusi terpercaya untuk membantu masyarakat menjaga kebersihan pakaian tanpa ribet.
+                                Dengan
+                                moto “Bersih, Wangi, dan Rapi”, Resik Laundry berkomitmen memberikan pelayanan terbaik
+                                untuk
+                                setiap pelanggan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-aos="fade-up" data-aos-duration="3000">
+        <div class="container my-5">
+            <div class="row g-4 justify-content-center">
+                <div class="col-12 col-sm-6 col-lg-3 d-flex">
+                    <div class="card flex-fill">
+                        <img src="orang.png" class="card-img-top gmbr" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Cuci Kiloan</h5>
+                            <p class="card-text">Cuci kiloan adalah layanan laundry di mana pelanggan membayar jasa
+                                pencucian berdasarkan berat pakaian (per kilogram), bukan per potong. Layanan ini sangat
+                                cocok bagi individu, keluarga, mahasiswa, hingga pekerja kantoran yang ingin mendapatkan
+                                pakaian bersih dan rapi tanpa repot.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 d-flex">
+                    <div class="card flex-fill">
+                        <img src="baju.png" class="card-img-top gmbr" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Cuci Satuan</h5>
+                            <p class="card-text">Cuci satuan adalah layanan laundry di mana pakaian dicuci dan dirawat
+                                secara individu atau berdasarkan jenisnya, bukan berdasarkan berat (kilogram). Layanan
+                                ini
+                                biasanya digunakan untuk pakaian tertentu yang memerlukan perawatan khusus, seperti jas,
+                                kebaya, bed cover, jaket, selimut, sprei, pakaian pesta, dan lainnya.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 d-flex">
+                    <div class="card flex-fill">
+                        <img src="gorden.jpg" class="card-img-top gmbr" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Gorden</h5>
+                            <p class="card-text">Gorden bukan hanya penutup jendela, tapi juga elemen penting dalam
+                                mempercantik interior rumah, kantor, maupun hotel. Namun karena fungsinya yang langsung
+                                bersentuhan dengan debu, asap, dan udara luar, gorden mudah kotor dan menyimpan bakteri.
+                                Untuk itulah layanan cuci gorden hadir — solusi praktis untuk menjaga kebersihan dan
+                                tampilan gorden Anda tetap maksimal.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 d-flex">
+                    <div class="card flex-fill">
+                        <img src="images.jpg" class="card-img-top gmbr" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Cuci Badcover</h5>
+                            <p class="card-text">Bed cover atau penutup kasur adalah salah satu perlengkapan tidur yang
+                                memberikan kenyamanan sekaligus menambah estetika kamar. Namun karena penggunaannya
+                                setiap
+                                hari, bed cover mudah kotor, menyimpan keringat, debu, tungau, bahkan bakteri. Oleh
+                                karena
+                                itu, cuci bed cover secara rutin sangat penting untuk menjaga kebersihan dan kesehatan
+                                tidur
+                                Anda.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 d-flex">
+                    <div class="card flex-fill">
+                        <img src="tas.png" class="card-img-top gmbr" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Tas</h5>
+                            <p class="card-text">Layanan jasa yang menawarkan layanan mencuci dan merawat tas, baik itu
+                                tas
+                                ransel, tas tangan, tas kanvas, dan lain sebagainya. Treatment dilakukan oleh team kami
+                                yang
+                                terampil dan berpengalaman dalam membersihkan dan merawat tas agar tetap terjaga
+                                kualitas
+                                dan fungsinya.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 d-flex">
+                    <div class="card flex-fill">
+                        <img src="sepatu.png" class="card-img-top gmbr" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Sepatu</h5>
+                            <p class="card-text">Layanan yang menawarkan jasa mencuci dan merawat sepatu dengan berbagai
+                                macam jenis dan bahan. Layanan jasa cuci sepatu biasanya dilakukan oleh team kami yang
+                                terampil dan berpengalaman dalam merawat sepatu agar tetap terjaga kualitas dan
+                                fungsinya.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 d-flex">
+                    <div class="card flex-fill">
+                        <img src="karpet.jpg" class="card-img-top gmbr" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Karpet</h5>
+                            <p class="card-text">Karpet adalah elemen penting dalam interior rumah, kantor, hingga
+                                tempat
+                                ibadah. Selain mempercantik ruangan, karpet juga berfungsi menambah kenyamanan. Namun,
+                                karena sering diinjak dan digunakan setiap hari, karpet sangat rentan menjadi sarang
+                                debu,
+                                kuman, tungau, hingga bau tak sedap. Untuk itu, layanan cuci karpet profesional
+                                sangat dibutuhkan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-aos="zoom-in">
+        <div class="y">
+            <div class="rer">
+                <img src="lk.jpg" alt="Resik Laundry">
+            </div>
+            <div class="x">
+                <h1>Keuntungan Menggunakan Layanan Laundry Terpercaya Resik Laundry.</h1>
+                <h3>Menjaga Kualitas Pakaian</h3>
+                <p>Jasa laundry yang profesional dan berpengalaman tentu selalu menjaga kualitas pakaian yang dititipkan
+                    oleh
+                    pelanggan. Karena kami mempunyai metode pencucian yang tepat agar tidak mudah rusak atau pudar
+                    warnanya.
+                </p>
+                <h3>Waktu Tenaga Lebih Efektif dan Efisien</h3>
+                <p>Dengan beralih menggunakan jasa laundry terdekat, Anda tentu lebih menghemat waktu dan tenaga yang
+                    biasanya
+                    dibutuhkan untuk mencuci lalu setrika pakaian. Kini Anda bisa memanfaatkan waktu tersebut untuk
+                    kegiatan
+                    yang lebih produktif.</p>
+                <h3>Lebih Hemat Biaya</h3>
+                <p>Mungkin untuk sebagian orang, beralih menggunakan jasa laundry kiloan itu menghabiskan biaya lebih
+                    besar.
+                    Tentu sebaliknya apabila Anda memikirkannya kembali, karena apabila Anda menggunakan jasa laundry
+                    yang
+                    menerima pickup delivery atau antar jemput. Anda bisa menghemat biaya transportasi selain dari waktu
+                    dan
+                    tenaga.</p>
+                <h3>Mencuci Lebih Bersih, Cepat, dan Aman</h3>
+                <p>Selain dari kebersihan yang selalu kami jaga kualitasnya, Sorcha Laundry juga tentu menjamin keamanan
+                    dan
+                    kenyamanan bagi pelanggan setia Resik Laundry. Kami selalu memberikan garansi untuk semua pelanggan
+                    yang
+                    mempercayakan kebutuhanya terhadap kami. Maka Anda tidak perlu khawatir lagi tentang keamanan,
+                    kecepatan,
+                    dan kebersihan dari layanan Resik Laundry.</p>
+            </div>
+        </div>
+    </div>
+    <div data-aos="fade-down">
+        <div class="row g-0 justify-content-center" style="gap: 15px">
+            <div class="col-12 col-sm-6 col-lg-3 d-flex">
+                <div class="card flex-fill">
+                    <div class="card-body1">
+                        <h5 class="card-title">Deterjen Unggulan</h5>
+                        <p class="card-text">Cuci satuan adalah layanan laundry di mana pakaian dicuci dan dirawat
+                            secara individu atau berdasarkan jenisnya, bukan berdasarkan berat (kilogram). Layanan
+                            ini
+                            biasanya digunakan untuk pakaian tertentu yang memerlukan perawatan khusus, seperti jas,
+                            kebaya, bed cover, jaket, selimut, sprei, pakaian pesta, dan lainnya.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3 d-flex">
+                <div class="card flex-fill">
+                    <div class="card-body1">
+                        <h5 class="card-title">Layanan Lengkap</h5>
+                        <p class="card-text">Cuci satuan adalah layanan laundry di mana pakaian dicuci dan dirawat
+                            secara individu atau berdasarkan jenisnya, bukan berdasarkan berat (kilogram). Layanan
+                            ini
+                            biasanya digunakan untuk pakaian tertentu yang memerlukan perawatan khusus, seperti jas,
+                            kebaya, bed cover, jaket, selimut, sprei, pakaian pesta, dan lainnya.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3 d-flex">
+                <div class="card flex-fill">
+                    <div class="card-body1">
+                        <h5 class="card-title">Geransi 100% puas</h5>
+                        <p class="card-text">Cuci satuan adalah layanan laundry di mana pakaian dicuci dan dirawat
+                            secara individu atau berdasarkan jenisnya, bukan berdasarkan berat (kilogram). Layanan
+                            ini
+                            biasanya digunakan untuk pakaian tertentu yang memerlukan perawatan khusus, seperti jas,
+                            kebaya, bed cover, jaket, selimut, sprei, pakaian pesta, dan lainnya.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+<div class="j">
+    <img src="wk.png" alt="" class="g">
+    </div>
+    <section class="kontak-section">
+        <div>
+            <h2>Kontak Kami</h2>
+            <p>📞 0812-3456-7890</p>
+            <p>📍 Jl. Melati No. 123, Jakarta</p>
+            <p>📧 ResikLaundry@gmail.com</p>
+        </div>
+        <div class="ror">
+            <h3>Keunggulan Kami :</h3>
+            <ul>
+                <li>Menggunakan detergen berkualitas dan ramah lingkungan</li>
+                <li>Proses cepat & tepat waktu</li>
+                <li>Dikerjakan oleh staf berpengalaman</li>
+                <li>Harga terjangkau</li>
+                <li>Wangi tahan lama</li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        &copy; 2025 ResikLaundry.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        function hideLoader() {
+            setTimeout(() => {
+                document.getElementById("loader").style.display = "none";
+            }, 1500);
+        }
+    </script>
+</body>
+
+</html>
